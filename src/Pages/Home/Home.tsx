@@ -1,16 +1,20 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-// import { Canvas } from "react-three-fiber";
 import { AnimatedComp } from "../../Components/AnimatedComp/AnimatedComp";
 import { Plane } from "../../Components/Plane/Plane";
 import { OrbitControls, softShadows } from "@react-three/drei";
+import { a } from "@react-spring/three";
 
 softShadows();
 
 export const Home = () => {
   return (
     <>
-      <Canvas shadows linear camera={{ position: [-4, 3, 10], fov: 60 }}>
+      <Canvas
+        shadows
+        linear
+        camera={{ position: [-4, 3, 10], fov: 60 }}
+        className='canvas'>
         <OrbitControls />
         <ambientLight intensity={0.4} />
         <pointLight position={[-10, 0, -2]} intensity={0.5} />
@@ -31,12 +35,13 @@ export const Home = () => {
         <AnimatedComp position={[-3, 2, -5]} args={[1, 2, 3]} />
         <AnimatedComp position={[2, 2.2, 4]} args={[1, 3, 2]} />
         <AnimatedComp position={[0, 2, 0]} args={[3, 2, 1]} />
-        <group>
+        <a.group>
           <Plane />
-        </group>
+        </a.group>
 
         {/* <OrbitControls /> */}
       </Canvas>
+      <h1 className='text'>selkrhnosejhpsejhlsčrjkt</h1>
     </>
   );
 };
