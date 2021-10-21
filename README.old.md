@@ -1,1 +1,0 @@
-# react_three_fiber_practice
