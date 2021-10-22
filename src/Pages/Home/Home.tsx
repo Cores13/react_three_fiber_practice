@@ -4,13 +4,37 @@ import { AnimatedComp } from "../../Components/AnimatedComp/AnimatedComp";
 import { Plane } from "../../Components/Plane/Plane";
 import { OrbitControls, softShadows } from "@react-three/drei";
 import { a } from "@react-spring/three";
+import SceneOne from "../SceneOne/SceneOne";
+import "./Home.css";
 
 softShadows();
 
 export const Home = () => {
   return (
     <>
-      <Canvas
+      <div className='homeScene'>
+        <img src='./VoxMagna.svg' alt='' className='logo' />
+        <SceneOne />
+        <a href='https://google.com' className='text'>
+          HOME
+        </a>
+        <a href='https://google.com' className='text2'>
+          SERVICES
+        </a>
+        <a href='https://google.com' className='text3'>
+          PROJECTS
+        </a>
+        <a href='https://google.com' className='text4'>
+          ABOUT
+        </a>
+        <a href='https://google.com' className='text5'>
+          CONTACT US
+        </a>
+        <a href='google.com' className='homeLink'>
+          View more
+        </a>
+      </div>
+      {/* <Canvas
         shadows
         linear
         camera={{ position: [-4, 3, 10], fov: 60 }}
@@ -39,9 +63,8 @@ export const Home = () => {
           <Plane />
         </a.group>
 
-        {/* <OrbitControls /> */}
-      </Canvas>
-      <h1 className='text'>selkrhnosejhpsejhlsčrjkt</h1>
+        <OrbitControls />
+      </Canvas> */}
     </>
   );
 };

@@ -10,9 +10,9 @@ export const AnimatedComp = ({ position, args }: any) => {
   const mesh: any = useRef();
 
   // const texture = useLoader(TextureLoader, "./rust.jpg");
-  // const texture = useTexture(
-  //   "https://i.pinimg.com/originals/86/e7/b6/86e7b6469a6c2d8f46923a1e6e97b5f2.jpg"
-  // );
+  const texture = useTexture(
+    "https://i.pinimg.com/originals/86/e7/b6/86e7b6469a6c2d8f46923a1e6e97b5f2.jpg"
+  );
 
   useFrame(() => {
     if (mesh.current) {
@@ -28,23 +28,24 @@ export const AnimatedComp = ({ position, args }: any) => {
 
   return (
     <a.mesh
+      ref={mesh}
       onClick={() => setExpand(!expand)}
       scale={props.scale}
       castShadow
-      ref={mesh}
       position={position}>
-      <AnimatedWobbleMaterial
+      {/* <MeshWobbleMaterial
+        alphaToCoverage
+        isMeshStandardMaterial
         speed={0.7}
-        factor={0.4}
+        factor={0.1}
+        skinning
         // map={texture}
         color='grey'
         attach='material'
-        alphaToCoverage
-        isMeshStandardMaterial
-      />
+      /> */}
       <boxBufferGeometry attach='geometry' args={args} />
 
-      {/* <meshLambertMaterial attach='material' color='crimson' /> */}
+      <meshLambertMaterial attach='material' color='crimson' />
     </a.mesh>
   );
 };

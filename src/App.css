@@ -39,11 +39,6 @@ body {
 .canvas {
   position: relative;
 }
-.text {
-  position: absolute;
-  top: 200px;
-  left: 50%;
-}
 
 @keyframes App-logo-spin {
   from {
