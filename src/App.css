@@ -4,6 +4,7 @@
   height: 100vh;
   background: white;
   /* background: black; */
+  position: relative;
 }
 body {
   width: 100vw;

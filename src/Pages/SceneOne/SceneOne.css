@@ -32,8 +32,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,10 @@ body {
 }
 
 .bg {
-  background: #101010;
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
 }
 
 .fullscreen.notready {
@@ -96,7 +99,7 @@ body {
 
 .fullscreen.ready > div {
   cursor: pointer;
-  z-index: 5;
+  z-index: 50;
 }
 
 .fullscreen.clicked {

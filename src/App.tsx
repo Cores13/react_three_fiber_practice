@@ -14,6 +14,7 @@ function App() {
           <Route exact path='/scene' component={SceneOne} />
           <Route path='/content' component={Content} />
         </Switch>
+        <SceneOne />
       </div>
     </Router>
   );

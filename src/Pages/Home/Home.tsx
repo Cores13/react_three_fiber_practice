@@ -1,70 +1,129 @@
-import React, { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
-import { AnimatedComp } from "../../Components/AnimatedComp/AnimatedComp";
-import { Plane } from "../../Components/Plane/Plane";
-import { OrbitControls, softShadows } from "@react-three/drei";
-import { a } from "@react-spring/three";
+import React, { useState, useContext, useEffect } from "react";
+import { GlobalState } from "../../GlobalState";
+import { softShadows } from "@react-three/drei";
 import SceneOne from "../SceneOne/SceneOne";
 import "./Home.css";
+import {
+  motion,
+  useViewportScroll,
+  AnimatePresence,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 
 softShadows();
 
 export const Home = () => {
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 0.2], [4, 0.6]);
+  const y = useTransform(scrollYProgress, [0, -1.5, -2.5], [0, 1.5, 1.5]);
+
+  const store = useContext(GlobalState);
+  const [site, setSite] = store?.sites;
+  const [home, setHome] = useState(false);
+  const [services, setServices] = useState(false);
+  const [projects, setProjects] = useState(false);
+  const [about, setAbout] = useState(false);
+  const [contact, setContact] = useState(false);
+
+  useEffect(() => {
+    if (site === "projects") {
+      setProjects(true);
+      setServices(false);
+      setHome(false);
+      setAbout(false);
+      setContact(false);
+    } else if (site === "services") {
+      setServices(true);
+      setHome(false);
+      setProjects(false);
+      setAbout(false);
+      setContact(false);
+    } else if (site === "about") {
+      setAbout(true);
+      setHome(false);
+      setProjects(false);
+      setServices(false);
+      setContact(false);
+    } else if (site === "contact") {
+      setContact(true);
+      setHome(false);
+      setServices(false);
+      setProjects(false);
+      setAbout(false);
+    } else if (site === "home") {
+      setHome(true);
+      setServices(false);
+      setProjects(false);
+      setAbout(false);
+      setContact(false);
+    }
+  }, [setSite, site]);
+
   return (
     <>
-      <div className='homeScene'>
-        <img src='./VoxMagna.svg' alt='' className='logo' />
-        <SceneOne />
-        <a href='https://google.com' className='text'>
-          HOME
-        </a>
-        <a href='https://google.com' className='text2'>
-          SERVICES
-        </a>
-        <a href='https://google.com' className='text3'>
-          PROJECTS
-        </a>
-        <a href='https://google.com' className='text4'>
-          ABOUT
-        </a>
-        <a href='https://google.com' className='text5'>
-          CONTACT US
-        </a>
-        <a href='google.com' className='homeLink'>
-          View more
-        </a>
-      </div>
-      {/* <Canvas
-        shadows
-        linear
-        camera={{ position: [-4, 3, 10], fov: 60 }}
-        className='canvas'>
-        <OrbitControls />
-        <ambientLight intensity={0.4} />
-        <pointLight position={[-10, 0, -2]} intensity={0.5} />
-        <pointLight position={[10, 5, 2]} intensity={0.5} />
-        <directionalLight
-          castShadow
-          intensity={0.3}
-          position={[0, 8, 0]}
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
-          shadow-camera-far={50}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
-        />
-
-        <AnimatedComp position={[-3, 2, -5]} args={[1, 2, 3]} />
-        <AnimatedComp position={[2, 2.2, 4]} args={[1, 3, 2]} />
-        <AnimatedComp position={[0, 2, 0]} args={[3, 2, 1]} />
-        <a.group>
-          <Plane />
-        </a.group>
-
-        <OrbitControls />
-      </Canvas> */}
+      {}
+      {/* <div className='homeScene'> */}
+      <img
+        src='./VoxMagna.svg'
+        alt=''
+        className='logo'
+        onClick={async () => await setSite("home")}
+      />
+      {home && (
+        <AnimatePresence>
+          <motion.h2
+            className='text'
+            onClick={async () => await setSite("home")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            key='modal'>
+            HOME
+          </motion.h2>
+          <motion.h2
+            className='text2'
+            onClick={async () => await setSite("services")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            key='modal'>
+            SERVICES
+          </motion.h2>
+          <motion.h2
+            className='text3'
+            onClick={async () => await setSite("projects")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            PROJECTS
+          </motion.h2>
+          <motion.h2
+            className='text4'
+            onClick={async () => await setSite("about")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            ABOUT
+          </motion.h2>
+          <motion.h2
+            className='text5'
+            onClick={async () => await setSite("contact")}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            CONTACT US
+          </motion.h2>
+          <motion.h2
+            className='homeLink'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            View more
+          </motion.h2>
+        </AnimatePresence>
+      )}
+      {/* </div> */}
     </>
   );
 };
