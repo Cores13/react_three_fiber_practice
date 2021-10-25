@@ -15,7 +15,7 @@ export const GlobalState = createContext<ContextType | undefined | any>(
 );
 
 export const DataProvider: React.FC = ({ children }) => {
-  const [site, setSite] = useState("home");
+  const [site, setSite] = useState("");
 
   var store = {
     sites: [site, setSite],

@@ -26,37 +26,26 @@ export const Home = () => {
   const [about, setAbout] = useState(false);
   const [contact, setContact] = useState(false);
 
+  const resetSite = () => {
+    setHome(false);
+    setServices(false);
+    setProjects(false);
+    setAbout(false);
+    setContact(false);
+  };
+
   useEffect(() => {
+    resetSite();
     if (site === "projects") {
       setProjects(true);
-      setServices(false);
-      setHome(false);
-      setAbout(false);
-      setContact(false);
     } else if (site === "services") {
       setServices(true);
-      setHome(false);
-      setProjects(false);
-      setAbout(false);
-      setContact(false);
     } else if (site === "about") {
       setAbout(true);
-      setHome(false);
-      setProjects(false);
-      setServices(false);
-      setContact(false);
     } else if (site === "contact") {
       setContact(true);
-      setHome(false);
-      setServices(false);
-      setProjects(false);
-      setAbout(false);
     } else if (site === "home") {
       setHome(true);
-      setServices(false);
-      setProjects(false);
-      setAbout(false);
-      setContact(false);
     }
   }, [setSite, site]);
 
@@ -70,59 +59,66 @@ export const Home = () => {
         className='logo'
         onClick={async () => await setSite("home")}
       />
-      {home && (
-        <AnimatePresence>
-          <motion.h2
-            className='text'
-            onClick={async () => await setSite("home")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            key='modal'>
-            HOME
-          </motion.h2>
-          <motion.h2
-            className='text2'
-            onClick={async () => await setSite("services")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            key='modal'>
-            SERVICES
-          </motion.h2>
-          <motion.h2
-            className='text3'
-            onClick={async () => await setSite("projects")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
-            PROJECTS
-          </motion.h2>
-          <motion.h2
-            className='text4'
-            onClick={async () => await setSite("about")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
-            ABOUT
-          </motion.h2>
-          <motion.h2
-            className='text5'
-            onClick={async () => await setSite("contact")}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
-            CONTACT US
-          </motion.h2>
-          <motion.h2
-            className='homeLink'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}>
-            View more
-          </motion.h2>
-        </AnimatePresence>
-      )}
+      <AnimatePresence>
+        {home && (
+          <>
+            <motion.h2
+              className='text'
+              onClick={async () => await setSite("home")}
+              transition={{ duration: 1 }}
+              initial={{ x: 500, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 500, opacity: 0 }}
+              key='modal'>
+              HOME
+            </motion.h2>
+            <motion.h2
+              className='text2'
+              onClick={async () => await setSite("services")}
+              transition={{ duration: 1 }}
+              initial={{ x: 500, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 500, opacity: 0 }}>
+              SERVICES
+            </motion.h2>
+            <motion.h2
+              className='text3'
+              onClick={async () => await setSite("projects")}
+              transition={{ duration: 1 }}
+              initial={{ x: 500, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 500, opacity: 0 }}>
+              PROJECTS
+            </motion.h2>
+            <motion.h2
+              className='text4'
+              onClick={async () => await setSite("about")}
+              transition={{ duration: 1 }}
+              initial={{ x: 500, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 500, opacity: 0 }}>
+              ABOUT
+            </motion.h2>
+            <motion.h2
+              className='text5'
+              onClick={async () => await setSite("contact")}
+              transition={{ duration: 1 }}
+              initial={{ x: 500, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 500, opacity: 0 }}>
+              CONTACT US
+            </motion.h2>
+            <motion.h2
+              className='homeLink'
+              transition={{ duration: 1 }}
+              initial={{ y: 500, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 500, opacity: 0 }}>
+              View more
+            </motion.h2>
+          </>
+        )}
+      </AnimatePresence>
       {/* </div> */}
     </>
   );

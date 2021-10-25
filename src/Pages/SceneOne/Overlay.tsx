@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import "./SceneOne.css";
+import { GlobalState } from "../../GlobalState";
 
 export default function Overlay({ ready, clicked, setClicked }: any) {
+  const store = useContext(GlobalState);
+  const [site, setSite] = store?.sites;
+
   return (
     <>
       <div
         className={`fullscreen bg ${ready ? "ready" : "notready"} ${
           clicked && "clicked"
         }`}>
-        <div onClick={() => ready && setClicked(true)}>
+        <div
+          onClick={() => {
+            ready && setClicked(true);
+            setSite("home");
+          }}>
           {!ready ? "loading" : "click to continue"}
         </div>
       </div>
