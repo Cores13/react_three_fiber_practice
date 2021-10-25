@@ -95,9 +95,6 @@ export const Nav = () => {
               className='text3'
               onClick={async () => {
                 await setSite("projects");
-                setTimeout(() => {
-                  setLoad(true);
-                }, 500);
               }}
               transition={{ duration: 1 }}
               initial={{ x: 500, opacity: 0 }}
