@@ -63,8 +63,10 @@ export const Nav = () => {
         alt=''
         className='logo'
         onClick={() => {
-          setSite("nav");
           setLoad(false);
+          setTimeout(() => {
+            setSite("nav");
+          }, 500);
         }}
       />
       <AnimatePresence>
@@ -91,7 +93,12 @@ export const Nav = () => {
             </motion.h2>
             <motion.h2
               className='text3'
-              onClick={async () => await setSite("projects")}
+              onClick={async () => {
+                await setSite("projects");
+                setTimeout(() => {
+                  setLoad(true);
+                }, 500);
+              }}
               transition={{ duration: 1 }}
               initial={{ x: 500, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
