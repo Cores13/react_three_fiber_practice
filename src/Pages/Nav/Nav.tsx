@@ -10,7 +10,11 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
+// import { Home } from "../Home/Home";
 import { Services } from "../Services/Services";
+// import { Projects } from "../Projects/Projects";
+import { About } from "../About/About";
+import { Contact } from "../Contact/Contact";
 
 softShadows();
 
@@ -133,14 +137,62 @@ export const Nav = () => {
       </AnimatePresence>
 
       <AnimatePresence>
+        {home && (
+          <motion.div
+            className='servicesDiv'
+            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            <Services />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
         {services && (
           <motion.div
             className='servicesDiv'
-            transition={{ duration: 1 }}
-            initial={{ y: 500, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 500, opacity: 0 }}>
+            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
             <Services />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {projects && (
+          <motion.div
+            className='servicesDiv'
+            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            <Services />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {about && (
+          <motion.div
+            className='servicesDiv'
+            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            <About />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {contact && (
+          <motion.div
+            className='servicesDiv'
+            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            <Contact />
           </motion.div>
         )}
       </AnimatePresence>

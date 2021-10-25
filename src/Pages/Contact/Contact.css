@@ -1,0 +1,71 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: black;
+  z-index: 1;
+  height: 100vh;
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+.contactTitle {
+  color: rgba(255, 255, 255, 0.751);
+  font-size: 3rem;
+  z-index: 1;
+}
+.contactDesc {
+  color: rgba(255, 255, 255, 0.751);
+  z-index: 1;
+  font-size: 1.2rem;
+}
+.contactUsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  background: rgb(36, 36, 36);
+  border-radius: 15px;
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  color: white;
+}
+input,
+textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(36, 36, 36);
+  font-family: sans-serif;
+  background: rgba(0, 0, 0, 0.59);
+  color: white;
+}
+label {
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.contactUsBtn {
+  padding: 10px;
+  border: 1.5px solid aquamarine;
+  font-weight: 600;
+  background-color: rgb(36, 36, 36);
+  color: aquamarine;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.contactTitle {
+  font-size: 3rem;
+}
+@media (max-width: 1024px) {
+  .contact {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+}

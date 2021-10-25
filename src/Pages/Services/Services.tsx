@@ -21,8 +21,8 @@ export const Services = () => {
       {load && (
         <motion.div
           className='services'
-          transition={{ duration: 2 }}
-          initial={{ y: 5000, opacity: 0 }}
+          transition={{ duration: 1 }}
+          initial={{ y: 500, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 5000, opacity: 0 }}>
           <h1 className='servicesTitle'>Services</h1>
