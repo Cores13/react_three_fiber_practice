@@ -16,7 +16,7 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
         <div
           onClick={() => {
             ready && setClicked(true);
-            setSite("home");
+            setSite("nav");
           }}>
           {!ready ? "loading" : "click to continue"}
         </div>

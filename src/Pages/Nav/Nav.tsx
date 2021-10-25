@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { GlobalState } from "../../GlobalState";
 import { softShadows } from "@react-three/drei";
 import SceneOne from "../SceneOne/SceneOne";
-import "./Home.css";
+import "./Nav.css";
 import {
   motion,
   useViewportScroll,
@@ -10,16 +10,19 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
+import { Services } from "../Services/Services";
 
 softShadows();
 
-export const Home = () => {
+export const Nav = () => {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.2], [4, 0.6]);
   const y = useTransform(scrollYProgress, [0, -1.5, -2.5], [0, 1.5, 1.5]);
 
   const store = useContext(GlobalState);
   const [site, setSite] = store?.sites;
+  const [load, setLoad] = store?.load;
+  const [nav, setNav] = useState(false);
   const [home, setHome] = useState(false);
   const [services, setServices] = useState(false);
   const [projects, setProjects] = useState(false);
@@ -27,6 +30,7 @@ export const Home = () => {
   const [contact, setContact] = useState(false);
 
   const resetSite = () => {
+    setNav(false);
     setHome(false);
     setServices(false);
     setProjects(false);
@@ -36,7 +40,9 @@ export const Home = () => {
 
   useEffect(() => {
     resetSite();
-    if (site === "projects") {
+    if (site === "nav") {
+      setNav(true);
+    } else if (site === "projects") {
       setProjects(true);
     } else if (site === "services") {
       setServices(true);
@@ -51,16 +57,18 @@ export const Home = () => {
 
   return (
     <>
-      {}
       {/* <div className='homeScene'> */}
       <img
         src='./VoxMagna.svg'
         alt=''
         className='logo'
-        onClick={async () => await setSite("home")}
+        onClick={() => {
+          setSite("nav");
+          setLoad(false);
+        }}
       />
       <AnimatePresence>
-        {home && (
+        {nav && (
           <>
             <motion.h2
               className='text'
@@ -119,6 +127,20 @@ export const Home = () => {
           </>
         )}
       </AnimatePresence>
+
+      <AnimatePresence>
+        {services && (
+          <motion.div
+            className='servicesDiv'
+            transition={{ duration: 1 }}
+            initial={{ y: 500, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 500, opacity: 0 }}>
+            <Services />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* </div> */}
     </>
   );

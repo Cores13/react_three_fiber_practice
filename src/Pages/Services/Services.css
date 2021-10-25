@@ -1,0 +1,17 @@
+.services {
+  position: relative;
+  color: black;
+  z-index: 1;
+}
+.servicesTitle {
+  position: absolute;
+  top: 150px;
+  left: 10%;
+  color: rgba(255, 255, 255, 0.751);
+}
+.servicesDesc {
+  position: absolute;
+  top: 220px;
+  left: 10%;
+  color: rgba(255, 255, 255, 0.751);
+}
