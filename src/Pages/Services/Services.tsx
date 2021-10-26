@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
-import "./Services.css";
+import React, { useContext } from "react";
 import { GlobalState } from "../../GlobalState";
+import "./Services.css";
 import {
   motion,
   useViewportScroll,

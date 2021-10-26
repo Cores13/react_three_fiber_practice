@@ -20,12 +20,12 @@ export const About = () => {
     <AnimatePresence>
       {load && (
         <motion.div
-          className='about'
+          className='aboutPage'
           transition={{ duration: 1 }}
           initial={{ y: 500, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 5000, opacity: 0 }}>
-          <h1 className='aboutTitle'>About us</h1>
+          <h1 className='aboutPageTitle'>About us</h1>
           <p className='aboutDesc'>
             VoxMagna is a marketing agency where you can boost your project and
             get more recognition. We have multiple teams of marketing squads,
