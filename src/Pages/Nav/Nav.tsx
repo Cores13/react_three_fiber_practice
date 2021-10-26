@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { GlobalState } from "../../GlobalState";
 import { softShadows } from "@react-three/drei";
-import SceneOne from "../SceneOne/SceneOne";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./Nav.css";
 import {
   motion,
@@ -45,6 +45,7 @@ export const Nav = () => {
     resetSite();
     if (site === "nav") {
       setNav(true);
+      setLoad(false);
     } else if (site === "projects") {
       setProjects(true);
     } else if (site === "services") {
@@ -56,7 +57,7 @@ export const Nav = () => {
     } else if (site === "home") {
       setHome(true);
     }
-  }, [setSite, site]);
+  }, [setSite, site, load]);
 
   return (
     <>
@@ -71,6 +72,26 @@ export const Nav = () => {
           }, 500);
         }}
       />
+      <AnimatePresence>
+        {load && (
+          <motion.div
+            className='back'
+            onClick={() => {
+              // setLoad(false);
+              setTimeout(() => {
+                setSite("nav");
+                setLoad(false);
+              }, 500);
+            }}
+            transition={{ duration: 1 }}
+            initial={{ x: 500, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 500, opacity: 0 }}>
+            <KeyboardBackspaceIcon />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <AnimatePresence>
         {nav && (
           <>
@@ -123,7 +144,6 @@ export const Nav = () => {
           </>
         )}
       </AnimatePresence>
-
       <AnimatePresence>
         {home && (
           <motion.div
@@ -184,7 +204,6 @@ export const Nav = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
       {/* </div> */}
     </>
   );
