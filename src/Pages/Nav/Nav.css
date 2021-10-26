@@ -141,3 +141,17 @@
   background: rgba(109, 104, 104, 0.2);
   overflow-y: scroll;
 }
+@media (max-width: 425px) {
+  .homeLink {
+    top: 80%;
+    left: 31%;
+  }
+  .text,
+  .text1,
+  .text2,
+  .text3,
+  .text4,
+  .text5 {
+    font-size: 2rem;
+  }
+}

@@ -126,6 +126,7 @@ export const Nav = () => {
             </motion.h2>
             <motion.h2
               className='homeLink'
+              onClick={async () => await setSite("contact")}
               transition={{ duration: 1 }}
               initial={{ y: 500, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
