@@ -82,6 +82,9 @@ label {
   .contact {
     padding-top: 200px;
   }
+  .contactTitle {
+    margin-top: 150px;
+  }
 }
 @media (max-width: 320px) {
   .contact {
