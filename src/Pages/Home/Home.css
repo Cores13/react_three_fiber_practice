@@ -220,6 +220,7 @@
   border-radius: 15px;
   width: 240px;
   height: 282px;
+  backdrop-filter: blur(5px);
 }
 .aboutCard > svg {
   color: var(--main);
