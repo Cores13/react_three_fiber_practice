@@ -1,0 +1,58 @@
+.MOBILEservices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.MOBILEservicesContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-top: 50px;
+}
+.MOBILEservicesTitle {
+  font-size: 3rem;
+}
+.MOBILEservicesDesc {
+  font-size: 1.5rem;
+}
+.MOBILEservicesCard {
+  font-size: 1.5rem;
+}
+.MOBILEservicesThumbnail {
+  width: 100%;
+  height: 30vh;
+  background: url("../../../images/4.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.MOBILEservicesCards {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.MOBILEservicesCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  margin: 10px;
+  color: white;
+  border-radius: 15px;
+  width: 240px;
+  height: 202px;
+}

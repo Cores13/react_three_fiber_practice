@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { GlobalState } from "../../GlobalState";
 import "./Home.css";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -240,10 +240,6 @@ export const Home = () => {
                     <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>
                     PR control
                   </li>
-                  {/* <li>
-                  <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>
-                  Guerrilla Marketing
-                </li> */}
                 </ul>
                 <a href='/contact' className='stepBtn'>
                   Find out more
