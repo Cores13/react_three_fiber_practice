@@ -12,7 +12,6 @@ import {
 } from "framer-motion";
 import { Home } from "../Home/Home";
 import { Services } from "../Services/Services";
-// import { Projects } from "../Projects/Projects";
 import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
 
@@ -61,7 +60,6 @@ export const Nav = () => {
 
   return (
     <>
-      {/* <div className='homeScene'> */}
       <img
         src='./VoxMagna.svg'
         alt=''
@@ -95,17 +93,6 @@ export const Nav = () => {
               exit={{ x: 500, opacity: 0 }}>
               SERVICES
             </motion.h2>
-            {/* <motion.h2
-              className='text3'
-              onClick={async () => {
-                await setSite("projects");
-              }}
-              transition={{ duration: 1 }}
-              initial={{ x: 500, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 500, opacity: 0 }}>
-              PROJECTS
-            </motion.h2> */}
             <motion.h2
               className='text4'
               onClick={async () => await setSite("about")}

@@ -6,7 +6,7 @@ import Overlay from "./Overlay";
 import "./SceneOne.css";
 
 function Carla(props: any) {
-  const { scene } = useGLTF("./carla-draco.glb");
+  const { scene } = useGLTF("/carla-draco.glb");
   return <primitive object={scene} {...props} />;
 }
 
