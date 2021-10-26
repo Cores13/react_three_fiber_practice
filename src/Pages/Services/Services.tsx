@@ -1,13 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalState } from "../../GlobalState";
 import "./Services.css";
-import {
-  motion,
-  // useViewportScroll,
-  AnimatePresence,
-  // useMotionValue,
-  // useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Services = () => {
   const store = useContext(GlobalState);

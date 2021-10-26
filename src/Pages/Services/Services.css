@@ -17,6 +17,7 @@
   z-index: 1;
 }
 .servicesDesc {
+  overflow: visible;
   color: rgba(255, 255, 255, 0.751);
   z-index: 1;
   font-size: 1.2rem;
