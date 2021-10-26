@@ -5,6 +5,7 @@ import { GlobalState } from "../../GlobalState";
 
 export default function Overlay({ ready, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
+  // eslint-disable-next-line
   const [site, setSite] = store?.sites;
 
   return (

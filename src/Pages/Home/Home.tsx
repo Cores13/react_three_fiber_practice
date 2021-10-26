@@ -7,13 +7,7 @@ import ShowChartIcon from "@mui/icons-material/ShowChart";
 import AddReactionIcon from "@mui/icons-material/AddReaction";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
-import {
-  motion,
-  useViewportScroll,
-  AnimatePresence,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Home = () => {
   const store = useContext(GlobalState);

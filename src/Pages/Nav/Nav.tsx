@@ -1,14 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { GlobalState } from "../../GlobalState";
 import { softShadows } from "@react-three/drei";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./Nav.css";
 import {
   motion,
-  useViewportScroll,
+  // useViewportScroll,
   AnimatePresence,
-  useMotionValue,
-  useTransform,
+  // useTransform,
 } from "framer-motion";
 import { Home } from "../Home/Home";
 import { Services } from "../Services/Services";
@@ -18,9 +17,9 @@ import { Contact } from "../Contact/Contact";
 softShadows();
 
 export const Nav = () => {
-  const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.2], [4, 0.6]);
-  const y = useTransform(scrollYProgress, [0, -1.5, -2.5], [0, 1.5, 1.5]);
+  // const { scrollYProgress } = useViewportScroll();
+  // const scale = useTransform(scrollYProgress, [0, 0.2], [4, 0.6]);
+  // const y = useTransform(scrollYProgress, [0, -1.5, -2.5], [0, 1.5, 1.5]);
 
   const store = useContext(GlobalState);
   const [site, setSite] = store?.sites;
@@ -57,7 +56,7 @@ export const Nav = () => {
     } else if (site === "home") {
       setHome(true);
     }
-  }, [setSite, site, load]);
+  }, [setSite, site, load, setLoad]);
 
   return (
     <>
@@ -77,7 +76,6 @@ export const Nav = () => {
           <motion.div
             className='back'
             onClick={() => {
-              // setLoad(false);
               setTimeout(() => {
                 setSite("nav");
                 setLoad(false);
@@ -204,7 +202,6 @@ export const Nav = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* </div> */}
     </>
   );
 };

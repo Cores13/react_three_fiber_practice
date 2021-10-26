@@ -3,10 +3,10 @@ import { GlobalState } from "../../GlobalState";
 import "./Services.css";
 import {
   motion,
-  useViewportScroll,
+  // useViewportScroll,
   AnimatePresence,
-  useMotionValue,
-  useTransform,
+  // useMotionValue,
+  // useTransform,
 } from "framer-motion";
 
 export const Services = () => {

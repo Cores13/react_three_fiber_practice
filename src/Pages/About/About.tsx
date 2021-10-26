@@ -1,13 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./About.css";
 import { GlobalState } from "../../GlobalState";
-import {
-  motion,
-  useViewportScroll,
-  AnimatePresence,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const About = () => {
   const store = useContext(GlobalState);

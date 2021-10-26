@@ -1,14 +1,19 @@
 import * as THREE from "three";
-import React, { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Reflector, Text, useTexture, useGLTF } from "@react-three/drei";
+import {
+  Reflector,
+  Text,
+  useTexture,
+  // useGLTF
+} from "@react-three/drei";
 import Overlay from "./Overlay";
 import "./SceneOne.css";
 
-function Carla(props: any) {
-  const { scene } = useGLTF("/carla-draco.glb");
-  return <primitive object={scene} {...props} />;
-}
+// function Carla(props: any) {
+//   const { scene } = useGLTF("/carla-draco.glb");
+//   return <primitive object={scene} {...props} />;
+// }
 
 function VideoText({ clicked, ...props }: any) {
   const [video] = useState(() =>
@@ -72,7 +77,7 @@ function Intro({ start, set }: any) {
   const [vec] = useState(() => new THREE.Vector3());
   useEffect(() => {
     setTimeout(() => set(true), 500);
-  }, []);
+  }, [set]);
   return useFrame((state) => {
     if (start) {
       state.camera.position.lerp(

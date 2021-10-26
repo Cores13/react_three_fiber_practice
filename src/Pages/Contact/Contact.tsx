@@ -1,13 +1,7 @@
 import React, { useContext } from "react";
 import "./Contact.css";
 import { GlobalState } from "../../GlobalState";
-import {
-  motion,
-  useViewportScroll,
-  AnimatePresence,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useForm, ValidationError } from "@formspree/react";
 
 export const Contact = () => {
