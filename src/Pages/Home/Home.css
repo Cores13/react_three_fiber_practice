@@ -22,7 +22,7 @@
   width: 2000px;
   height: 2000px;
   position: absolute;
-  opacity: 0.05;
+  opacity: 0.02;
   top: 1000px;
   z-index: -1;
   overflow-x: hidden;
@@ -212,7 +212,7 @@
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   margin: 10px;
   color: white;
@@ -231,7 +231,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background: var(--grey);
+  background: transparent;
   overflow: hidden;
   padding-bottom: 50px;
 }
