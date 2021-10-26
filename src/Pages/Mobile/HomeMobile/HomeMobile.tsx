@@ -1,10 +1,8 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import "./HomeMobile.css";
 import { GlobalState } from "../../../GlobalState";
 import { Navbar } from "../Components/Navbar/Navbar";
 import { Footer } from "../Components/Footer/Footer";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
@@ -16,11 +14,6 @@ interface Props {}
 export const HomeMobile = (props: Props) => {
   const store = useContext(GlobalState);
   const [site, setSite] = store?.sites;
-
-  useEffect(() => {
-    setSite("home");
-    AOS.init();
-  }, [setSite, site]);
 
   return (
     <div className='MOBILEhome'>
@@ -43,20 +36,11 @@ export const HomeMobile = (props: Props) => {
         <div className='MOBILEmission'>
           <div className='MOBILEmissionWrapper'>
             <div className='MOBILEmissionLeft'>
-              <h1
-                className='MOBILEmissionTitle'
-                data-aos='fade-right'
-                data-aos-easing='ease-in'
-                data-aos-offset='100'>
-                OUR MISSION
-              </h1>
+              <h1 className='MOBILEmissionTitle'>OUR MISSION</h1>
             </div>
             <div className='MOBILEmissionRight'>
               <div className='MOBILEmissionDesc'>
-                <p
-                  data-aos='fade-left'
-                  data-aos-easing='ease-in'
-                  data-aos-offset='100'>
+                <p>
                   VoxMagna will strive to make your project be among the best of
                   the best. Our goal is to achieve long-term growth of your
                   project by ensuring the best quality marketing and fulfillment
@@ -69,11 +53,7 @@ export const HomeMobile = (props: Props) => {
 
         {/* PLAN */}
         <div className='MOBILEplan'>
-          <div
-            className='MOBILEplanWrapper'
-            data-aos='fade-up'
-            data-aos-easing='ease-out'
-            data-aos-offset='300'>
+          <div className='MOBILEplanWrapper'>
             <div className='MOBILEplanTop'>
               <h1 className='MOBILEplanTitle'>
                 <span className='purpleText'>PREMIUM </span>MARKETING STRATEGY
@@ -103,55 +83,35 @@ export const HomeMobile = (props: Props) => {
         <div className='MOBILEabout'>
           <h1 className='MOBILEaboutTitle'>ABOUT OUR PERFORMANCE</h1>
           <div className='MOBILEaboutCards'>
-            <div
-              className='MOBILEaboutCard'
-              data-aos='fade-up'
-              data-aos-easing='ease-out'
-              data-aos-offset='300'>
+            <div className='MOBILEaboutCard'>
               <AttachMoneyIcon />
               <h1 className='MOBILEaboutCardTitle'>Worth it</h1>
               <p className='MOBILEaboutCardDesc'>
                 Best prices for the marketing we offer
               </p>
             </div>
-            <div
-              className='MOBILEaboutCard'
-              data-aos='fade-up'
-              data-aos-easing='ease-out'
-              data-aos-offset='300'>
+            <div className='MOBILEaboutCard'>
               <AutoAwesomeIcon />
               <h1 className='MOBILEaboutCardTitle'>Skilled</h1>
               <p className='MOBILEaboutCardDesc'>
                 Years of experience behind us
               </p>
             </div>
-            <div
-              className='MOBILEaboutCard'
-              data-aos='fade-up'
-              data-aos-easing='ease-out'
-              data-aos-offset='300'>
+            <div className='MOBILEaboutCard'>
               <ShowChartIcon />
               <h1 className='MOBILEaboutCardTitle'>Efficient</h1>
               <p className='MOBILEaboutCardDesc'>
                 Straight to the point, not wasting time on inefficient marketing
               </p>
             </div>
-            <div
-              className='MOBILEaboutCard'
-              data-aos='fade-up'
-              data-aos-easing='ease-out'
-              data-aos-offset='300'>
+            <div className='MOBILEaboutCard'>
               <AddReactionIcon />
               <h1 className='MOBILEaboutCardTitle'>Trusted</h1>
               <p className='MOBILEaboutCardDesc'>
                 Good reputation among community and investors
               </p>
             </div>
-            <div
-              className='MOBILEaboutCard'
-              data-aos='fade-up'
-              data-aos-easing='ease-out'
-              data-aos-offset='300'>
+            <div className='MOBILEaboutCard'>
               <AccountBalanceIcon />
               <h1 className='MOBILEaboutCardTitle'>Huge</h1>
               <p className='MOBILEaboutCardDesc'>
@@ -164,11 +124,7 @@ export const HomeMobile = (props: Props) => {
         {/* STEPS */}
         <div className='MOBILEsteps'>
           <h1 className='MOBILEstepsTitle'>STEPS TO SUCCESS</h1>
-          <div
-            className='MOBILEstep sto'
-            data-aos='fade-up'
-            data-aos-easing='ease-out'
-            data-aos-offset='300'>
+          <div className='MOBILEstep sto'>
             <div className='MOBILEstepLeft'>
               <h1 className='MOBILEstepNumber one'>01</h1>
             </div>
@@ -202,11 +158,7 @@ export const HomeMobile = (props: Props) => {
           </div>
 
           <div className='MOBILEstepWrapper'>
-            <div
-              className='step stt'
-              data-aos='fade-up'
-              data-aos-easing='ease-out'
-              data-aos-offset='300'>
+            <div className='step stt'>
               <div className='MOBILEstepLeft MOBILEstepText'>
                 <h3 className='MOBILEstepTitle'>STEP TWO</h3>
                 <p className='MOBILEstepDesc'>
@@ -258,11 +210,7 @@ export const HomeMobile = (props: Props) => {
             </div>
           </div>
 
-          <div
-            className='MOBILEstep str'
-            data-aos='fade-up'
-            data-aos-easing='ease-out'
-            data-aos-offset='300'>
+          <div className='MOBILEstep str'>
             <div className='MOBILEstepLeft'>
               <h1 className='MOBILEstepNumber three'>03</h1>
             </div>
@@ -283,10 +231,6 @@ export const HomeMobile = (props: Props) => {
                   <span style={{ color: "#3f0aa1", fontSize: "2rem" }}>• </span>
                   PR control
                 </li>
-                {/* <li>
-                  <span style={{ color: "#3f0aa1", fontSize: "2rem" }}>• </span>
-                  Guerrilla Marketing
-                </li> */}
               </ul>
               <a href='/contact' className='MOBILEstepBtn'>
                 Find out more

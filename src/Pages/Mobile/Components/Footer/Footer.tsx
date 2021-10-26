@@ -1,16 +1,14 @@
-import "./Footer.css";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import "./Footer.css";
 
-interface Props {}
-
-export const Footer = (props: Props) => {
+export const Footer = () => {
   return (
-    <footer className='MOBILEMOBILEfooter'>
+    <footer className='MOBILEfooter'>
       <div className='MOBILEfooterLogoDiv'>
         <a href='/' className='MOBILEfooterLogoLink'>
-          <img src='./VoxMagna.svg' alt='Logo' className='navbarLogo' />
-          <h1 className='navbarTitle'>VOX MAGNA</h1>
+          <img src='./VoxMagna.svg' alt='Logo' className='MOBILEnavbarLogo' />
+          <h1 className='MOBILEnavbarTitle'>VOX MAGNA</h1>
         </a>
       </div>
       <div className='MOBILEfooterMenu'>

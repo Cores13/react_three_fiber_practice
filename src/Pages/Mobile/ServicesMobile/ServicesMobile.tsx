@@ -1,16 +1,8 @@
-import { useEffect } from "react";
 import { Footer } from "../Components/Footer/Footer";
 import { Navbar } from "../Components/Navbar/Navbar";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import "./ServicesMobile.css";
-interface Props {}
 
-export const ServicesMobile = (props: Props) => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
+export const ServicesMobile = () => {
   return (
     <>
       <Navbar />

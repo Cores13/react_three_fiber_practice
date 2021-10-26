@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Footer } from "../Components/Footer/Footer";
 import { Navbar } from "../Components/Navbar/Navbar";
 import "./ContactMobile.css";
@@ -73,7 +73,7 @@ export const ContactMobile = (props: Props) => {
                 errors={state.errors}
               />
               <button
-                className='contactUsBtn'
+                className='MOBILEcontactUsBtn'
                 type='submit'
                 disabled={state.submitting}>
                 Submit
