@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
@@ -7,6 +7,12 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
   // eslint-disable-next-line
   const [site, setSite] = store?.sites;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setClicked(true);
+    }, 2000);
+  }, []);
 
   return (
     <>
@@ -19,7 +25,7 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
             ready && setClicked(true);
             setSite("nav");
           }}>
-          {!ready ? "loading" : "click to continue"}
+          {!ready ? "loading" : "loading"}
         </div>
       </div>
       {/* <Footer
