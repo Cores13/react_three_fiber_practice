@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export const Home = () => {
   const store = useContext(GlobalState);
+  const [site, setSite] = store?.sites;
   const [load, setLoad] = store?.load;
 
   setTimeout(() => {
@@ -32,9 +33,16 @@ export const Home = () => {
                 LET OUR VOICE BE THE FRONTMAN OF YOUR BUSINESS! ANY QUESTIONS
                 BEFORE WE START ROCKING?
               </h1>
-              <a href='/contact' className='landingContactBtn'>
+              <button
+                onClick={() => {
+                  setLoad(false);
+                  setTimeout(() => {
+                    setSite("contact");
+                  }, 500);
+                }}
+                className='landingContactBtn'>
                 ASK A QUESTION
-              </a>
+              </button>
             </div>
           </div>
 
@@ -79,9 +87,16 @@ export const Home = () => {
                   Sign up for the highest quality and performance marketing.
                   Cooperate with our team for the best results.
                 </p>
-                <a href='/contact' className='planBtn'>
+                <button
+                  onClick={() => {
+                    setLoad(false);
+                    setTimeout(() => {
+                      setSite("contact");
+                    }, 500);
+                  }}
+                  className='planBtn'>
                   GET PREMIUM
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -157,9 +172,16 @@ export const Home = () => {
                     Content Writing
                   </li>
                 </ul>
-                <a href='/contact' className='stepBtn'>
+                <button
+                  onClick={() => {
+                    setLoad(false);
+                    setTimeout(() => {
+                      setSite("contact");
+                    }, 500);
+                  }}
+                  className='stepBtn'>
                   Find out more
-                </a>
+                </button>
               </div>
             </div>
             <hr className='divider' />
@@ -208,9 +230,16 @@ export const Home = () => {
                       List of twitter influencers and work with them
                     </li>
                   </ul>
-                  <a href='/contact' className='stepBtn'>
+                  <button
+                    onClick={() => {
+                      setLoad(false);
+                      setTimeout(() => {
+                        setSite("contact");
+                      }, 500);
+                    }}
+                    className='stepBtn'>
                     Find out more
-                  </a>
+                  </button>
                 </div>
                 <div className='stepRight'>
                   <h1 className='stepNumber two'>02</h1>
@@ -241,9 +270,16 @@ export const Home = () => {
                     PR control
                   </li>
                 </ul>
-                <a href='/contact' className='stepBtn'>
+                <button
+                  onClick={() => {
+                    setLoad(false);
+                    setTimeout(() => {
+                      setSite("contact");
+                    }, 500);
+                  }}
+                  className='stepBtn'>
                   Find out more
-                </a>
+                </button>
               </div>
             </div>
           </div>
