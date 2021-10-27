@@ -284,7 +284,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-clip: text;
-  backdrop-filter: saturate(0);
+  /* backdrop-filter: saturate(0); */
   -webkit-background-clip: text;
   color: transparent;
   width: 100%;
