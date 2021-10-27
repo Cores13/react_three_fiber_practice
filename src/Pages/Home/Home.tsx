@@ -220,14 +220,14 @@ export const Home = () => {
                       <span style={{ color: "aqua", fontSize: "2rem" }}>
                         •{" "}
                       </span>{" "}
-                      Twitter and youtube influencers comments on topics of
+                      Twitter and YouTube influencers comments on topics of
                       “what token to invest in”
                     </li>
                     <li>
                       <span style={{ color: "aqua", fontSize: "2rem" }}>
                         •{" "}
                       </span>
-                      List of twitter influencers and work with them
+                      List of Twitter influencers and work with them
                     </li>
                   </ul>
                   <button
@@ -262,8 +262,8 @@ export const Home = () => {
                 <ul>
                   <li>
                     <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>
-                    Full marketing control and planning (banner ads: coinzilla,
-                    twitter, fb, insta, google ?)
+                    Full marketing control and planning (banner ads: Coinzilla,
+                    Twitter, Facebook, Instagram, Google)
                   </li>
                   <li>
                     <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>

@@ -3,16 +3,19 @@ import React, { useContext, useEffect } from "react";
 import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
 
-export default function Overlay({ ready, clicked, setClicked }: any) {
+export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
   // eslint-disable-next-line
   const [site, setSite] = store?.sites;
 
-  useEffect(() => {
-    setTimeout(() => {
-      setClicked(true);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setReady(true);
+  //   setTimeout(async () => {
+  //     await (ready && setClicked(true));
+  //     setClicked(true);
+  //     setSite("nav");
+  //   }, 4000);
+  // }, [ready, clicked, setClicked, setReady, setSite]);
 
   return (
     <>
@@ -24,8 +27,9 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
           onClick={() => {
             ready && setClicked(true);
             setSite("nav");
-          }}>
-          {!ready ? "loading" : "loading"}
+          }}
+          className='clickToContinue'>
+          {!ready ? "LOADING" : "CLICK TO CONTINUE"}
         </div>
       </div>
       {/* <Footer
