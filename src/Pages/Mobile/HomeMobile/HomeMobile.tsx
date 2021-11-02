@@ -238,6 +238,20 @@ export const HomeMobile = (props: Props) => {
             </div>
           </div>
         </div>
+        <div className='testimonial'>
+          <h1 className='testimonialTitle'>TESTIMONIAL</h1>
+          <a
+            className='testimonialContent'
+            href='https://ideaology.io'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <img
+              src='./ideaologyLogo.svg'
+              alt='Ideaology Logo'
+              className='ideaologyLogo'
+            />
+          </a>
+        </div>
         <Footer />
       </div>
     </div>

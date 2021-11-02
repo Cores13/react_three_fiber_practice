@@ -354,6 +354,7 @@ ul > li {
   background-position: center center;
   border-radius: 10px;
   margin: 0 auto;
+  padding: 5px;
 }
 .testimonialContent:hover {
   transform: scale(1.05);
@@ -420,7 +421,8 @@ ul > li {
   .missionWrapper {
     width: 85%;
   }
-  .missionTitle {
+  .missionTitle,
+  .testimonialTitle {
     font-size: 2.5rem;
   }
   .missionDesc > p {
@@ -430,7 +432,8 @@ ul > li {
     width: 70%;
     padding: 25px;
   }
-  .planTitle {
+  .planTitle,
+  .testimonialTitle {
     font-size: 2.5rem;
   }
   .planBot > p {
@@ -508,7 +511,8 @@ ul > li {
     text-align: center;
   }
   .aboutTitle,
-  .stepsTitle {
+  .stepsTitle,
+  .testimonialTitle {
     font-size: 2.5rem;
   }
   .sto {
@@ -563,7 +567,8 @@ ul > li {
   }
   .aboutTitle,
   .missionTitle,
-  .stepsTitle {
+  .stepsTitle,
+  .testimonialTitle {
     margin-left: 0;
     font-size: 2.1rem;
   }
