@@ -10,10 +10,10 @@ import { AboutMobile } from "./Pages/Mobile/AboutMobile/AboutMobile";
 
 function App() {
   const isMobile = window.innerWidth <= 700;
-  // const baseUrl: any = document
-  //   .getElementsByTagName("base")[0]
-  //   .getAttribute("href");
-  const baseUrl = "https://voxmagna.co";
+  const baseUrl: any = document
+    .getElementsByTagName("base")[0]
+    .getAttribute("href");
+  // const baseUrl = "https://voxmagna.co";
 
   return (
     <Router basename={baseUrl}>
