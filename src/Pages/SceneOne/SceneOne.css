@@ -162,10 +162,22 @@ body {
   height: auto;
 }
 .loadingBtn {
-  transform: translateY(80vh);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
   font-size: 2rem;
   border: none;
   outline: none;
   background: transparent;
   color: white;
+}
+@media (max-width: 424px) {
+  .logoPiece {
+    width: 50%;
+    height: auto;
+  }
+  .loadingBtn {
+    font-size: 2rem;
+  }
 }
