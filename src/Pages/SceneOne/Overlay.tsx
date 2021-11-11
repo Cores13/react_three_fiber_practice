@@ -3,7 +3,7 @@ import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Overlay({ ready, clicked, setClicked }: any) {
+export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
   // eslint-disable-next-line
   const [site, setSite] = store?.sites;
@@ -14,6 +14,15 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
       setLoading(false);
     }, 4500);
   }, []);
+
+  // useEffect(() => {
+  //   setReady(true);
+  //   setTimeout(async () => {
+  //     await (ready && setClicked(true));
+  //     setClicked(true);
+  //     setSite("nav");
+  //   }, 4000);
+  // }, [ready, clicked, setClicked, setReady, setSite]);
 
   return (
     <>

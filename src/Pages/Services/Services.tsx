@@ -1,13 +1,7 @@
 import React, { useContext } from "react";
 import { GlobalState } from "../../GlobalState";
 import "./Services.css";
-import {
-  motion,
-  // useViewportScroll,
-  AnimatePresence,
-  // useMotionValue,
-  // useTransform,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Services = () => {
   const store = useContext(GlobalState);
@@ -49,15 +43,15 @@ export const Services = () => {
               Social media boost (likes, followers, comments)
             </motion.div>
             <motion.div className='servicesCard'>
-              Twitter and youtube influencers comments on topics of “what token
+              Twitter and YouTube influencers comments on topics of “what token
               to invest in”
             </motion.div>
             <motion.div className='servicesCard'>
-              List of twitter influencers and work with them
+              List of Twitter influencers and work with them
             </motion.div>
             <motion.div className='servicesCard'>
-              Full marketing control and planning (banner ads: coinzilla,
-              twitter, fb, insta, google ?)
+              Full marketing control and planning (banner ads: Coinzilla,
+              Twitter, Facebook, Instagram, Google)
             </motion.div>
             <motion.div className='servicesCard'>PR control</motion.div>
           </motion.div>

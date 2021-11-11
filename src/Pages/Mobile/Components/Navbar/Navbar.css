@@ -1,0 +1,123 @@
+.MOBILEnavbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  overflow-y: hidden;
+}
+.MOBILEnavbarNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 70%;
+}
+.MOBILEnavbarLogoDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 25px;
+}
+.MOBILEnavbarLogoLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 25px;
+  text-decoration: none;
+  margin-left: 0;
+}
+.MOBILEnavbarLogo {
+  height: 75px;
+}
+.MOBILEnavbarTitle {
+  color: var(--grey);
+  font-family: "Economica", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 100;
+  text-decoration: none;
+}
+.MOBILEnavbarLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.MOBILEnavbarLink:hover {
+  color: var(--main);
+}
+.MOBILEnavbarSocial {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 15%;
+}
+.MOBILEnavbarLinkSocial {
+  color: var(--main) !important;
+  fill: var(--main) !important;
+  text-decoration: none;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .MOBILEnavbarTitle {
+    font-size: 1.8rem;
+  }
+  .MOBILEnavbarLogo {
+    height: 65px;
+  }
+  .MOBILEnavbarLink {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  .MOBILEnavbarSocial {
+    width: 25%;
+  }
+}
+@media (max-width: 425px) {
+  .MOBILEnavbarTitle {
+    font-size: 1.4rem;
+  }
+  .MOBILEnavbarSocial {
+    display: none;
+  }
+  .MOBILEnavbarLogoDiv {
+    margin-left: 10px;
+  }
+  .MOBILEnavbarLink {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 375px) {
+  .MOBILEnavbarTitle {
+    font-size: 1.2rem;
+  }
+  .MOBILEnavbarLogoDiv {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 320px) {
+  .MOBILEnavbarLogo {
+    height: 45px;
+  }
+  .MOBILEnavbarLogoDiv {
+    flex-direction: column;
+    margin-left: 5px;
+  }
+  .MOBILEnavbarTitle {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+  .MOBILEnavbarNav {
+    width: 75%;
+  }
+  .MOBILEnavbarLink {
+    font-size: 0.7rem;
+  }
+}
