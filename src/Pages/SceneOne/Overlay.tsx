@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
 import { motion, AnimatePresence } from "framer-motion";
@@ -7,6 +7,13 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
   // eslint-disable-next-line
   const [site, setSite] = store?.sites;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4500);
+  }, []);
 
   return (
     <>
@@ -25,10 +32,9 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
                 ready && setClicked(true);
                 setSite("nav");
               }}>
-              {/* {!ready ? "loading" : "click to continue"} */}
               {!clicked && (
                 <div>
-                  <div className='landingLogo'>
+                  <div className='loadingLogo'>
                     <motion.img
                       src='./1half.png'
                       alt=''
@@ -85,6 +91,11 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
                       }}
                       exit={{ left: "110%", top: "110%", opacity: 0 }}
                     />
+                    {!loading && (
+                      <button className='loadingBtn'>
+                        {!ready ? "loading" : "click to continue"}
+                      </button>
+                    )}
                   </div>
                 </div>
               )}
