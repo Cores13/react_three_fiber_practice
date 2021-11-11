@@ -47,7 +47,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                     <motion.img
                       src='./1half.png'
                       alt=''
-                      className='leftTopLogo logoPiece'
+                      className='logoPiece'
                       transition={{ duration: 3.5 }}
                       initial={{ top: "-10%", left: "-10%", opacity: 0 }}
                       animate={{
@@ -61,7 +61,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                     <motion.img
                       src='./2half.png'
                       alt=''
-                      className='rightTopLogo logoPiece'
+                      className='logoPiece'
                       transition={{ duration: 3.5 }}
                       initial={{ top: "-10%", left: "110%", opacity: 0 }}
                       animate={{
@@ -75,7 +75,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                     <motion.img
                       src='./3half.png'
                       alt=''
-                      className='leftBotLogo logoPiece'
+                      className='logoPiece'
                       transition={{ duration: 3.5 }}
                       initial={{ left: "-10%", top: "110%", opacity: 0 }}
                       animate={{
@@ -89,7 +89,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                     <motion.img
                       src='./4half.png'
                       alt=''
-                      className='rightTopLogo logoPiece'
+                      className='logoPiece'
                       transition={{ duration: 3.5 }}
                       initial={{ left: "110%", top: "110%", opacity: 0 }}
                       animate={{
