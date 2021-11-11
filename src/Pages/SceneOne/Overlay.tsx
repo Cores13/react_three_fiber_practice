@@ -19,7 +19,23 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
             ready && setClicked(true);
             setSite("nav");
           }}>
-          {!ready ? "loading" : "click to continue"}
+          {/* {!ready ? "loading" : "click to continue"} */}
+          <div>
+            <div className='loadingLogo'>
+              <img src='./1half.png' alt='' className='leftTopLogo logoPiece' />
+              <img
+                src='./2half.png'
+                alt=''
+                className='rightTopLogo logoPiece'
+              />
+              <img src='./3half.png' alt='' className='leftBotLogo logoPiece' />
+              <img
+                src='./4half.png'
+                alt=''
+                className='rightTopLogo logoPiece'
+              />
+            </div>
+          </div>
         </div>
       </div>
       {/* <Footer

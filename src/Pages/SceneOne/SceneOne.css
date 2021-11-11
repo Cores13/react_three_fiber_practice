@@ -118,3 +118,20 @@ body {
   text-decoration: underline;
   color: inherit;
 }
+
+.landingLogo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+}
+.logoPiece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 20%;
+  height: auto;
+}
