@@ -121,11 +121,10 @@ body {
 
 .landingLogo {
   position: relative;
-  width: 100%;
-  height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 .logoPiece {
   position: absolute;

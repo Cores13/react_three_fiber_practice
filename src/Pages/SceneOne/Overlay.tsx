@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-
 import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Overlay({ ready, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
@@ -10,35 +10,88 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
 
   return (
     <>
-      <div
-        className={`fullscreen bg ${ready ? "ready" : "notready"} ${
-          clicked && "clicked"
-        }`}>
-        <div
-          onClick={() => {
-            ready && setClicked(true);
-            setSite("nav");
-          }}>
-          {/* {!ready ? "loading" : "click to continue"} */}
-          <div>
-            <div className='loadingLogo'>
-              <img src='./1half.png' alt='' className='leftTopLogo logoPiece' />
-              <img
-                src='./2half.png'
-                alt=''
-                className='rightTopLogo logoPiece'
-              />
-              <img src='./3half.png' alt='' className='leftBotLogo logoPiece' />
-              <img
-                src='./4half.png'
-                alt=''
-                className='rightTopLogo logoPiece'
-              />
+      <AnimatePresence>
+        {!clicked && (
+          <motion.div
+            className={`fullscreen bg ${ready ? "ready" : "notready"} ${
+              clicked && "clicked"
+            }`}
+            transition={{ duration: 1 }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}>
+            <div
+              onClick={() => {
+                ready && setClicked(true);
+                setSite("nav");
+              }}>
+              {/* {!ready ? "loading" : "click to continue"} */}
+              {!clicked && (
+                <div>
+                  <div className='landingLogo'>
+                    <motion.img
+                      src='./1half.png'
+                      alt=''
+                      className='leftTopLogo logoPiece'
+                      transition={{ duration: 3.5 }}
+                      initial={{ top: "-10%", left: "-10%", opacity: 0 }}
+                      animate={{
+                        top: "50%",
+                        left: "50%",
+                        opacity: 1,
+                        transform: "translateX(-50%), translateY(-50%)",
+                      }}
+                      exit={{ top: "-10%", left: "-10%", opacity: 0 }}
+                    />
+                    <motion.img
+                      src='./2half.png'
+                      alt=''
+                      className='rightTopLogo logoPiece'
+                      transition={{ duration: 3.5 }}
+                      initial={{ top: "-10%", left: "110%", opacity: 0 }}
+                      animate={{
+                        top: "50%",
+                        left: "50%",
+                        opacity: 1,
+                        transform: "translateX(-50%) translateY(-50%)",
+                      }}
+                      exit={{ top: "-10%", left: "110%", opacity: 0 }}
+                    />
+                    <motion.img
+                      src='./3half.png'
+                      alt=''
+                      className='leftBotLogo logoPiece'
+                      transition={{ duration: 3.5 }}
+                      initial={{ left: "-10%", top: "110%", opacity: 0 }}
+                      animate={{
+                        top: "50%",
+                        left: "50%",
+                        opacity: 1,
+                        transform: "translateX(-50%) translateY(-50%)",
+                      }}
+                      exit={{ left: "-10%", top: "110%", opacity: 0 }}
+                    />
+                    <motion.img
+                      src='./4half.png'
+                      alt=''
+                      className='rightTopLogo logoPiece'
+                      transition={{ duration: 3.5 }}
+                      initial={{ left: "110%", top: "110%", opacity: 0 }}
+                      animate={{
+                        top: "50%",
+                        left: "50%",
+                        opacity: 1,
+                        transform: "translateX(-50%) translateY(-50%)",
+                      }}
+                      exit={{ left: "110%", top: "110%", opacity: 0 }}
+                    />
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
-        </div>
-      </div>
-      {/* <Footer
+          </motion.div>
+        )}
+        {/* <Footer
         date='28. January'
         year='2021'
         link1={<a href='https://github.com/pmndrs/drei'>pmndrs/drei</a>}
@@ -48,6 +101,7 @@ export default function Overlay({ ready, clicked, setClicked }: any) {
           </a>
         }
       /> */}
+      </AnimatePresence>
     </>
   );
 }
