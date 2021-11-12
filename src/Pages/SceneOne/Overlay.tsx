@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
 import { motion, AnimatePresence } from "framer-motion";
+import { radioClasses } from "@mui/material";
 
 export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
   const store = useContext(GlobalState);
@@ -12,7 +13,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4500);
+    }, 4000);
   }, []);
 
   // useEffect(() => {
@@ -34,9 +35,25 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
             }`}
             transition={{ duration: 1 }}
             initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
+            animate={{
+              opacity: 1,
+            }}
             exit={{ opacity: 0 }}>
-            <div
+            <motion.div
+              // className={`${
+              //   loading
+              //     ? "loadingBg"
+              //     : "loadingGradient"
+              // }`}
+              // style={{
+              //   background: `${
+              //     loading
+              //       ? "transparent"
+              //       : "radial-gradient(#ffffff2a,#ffffff1c, #e5ff000c, #000000, #000000, #000000)"
+              //   }`,
+              //   border: "none",
+              // }}
+
               onClick={() => {
                 ready && setClicked(true);
                 setSite("nav");
@@ -44,11 +61,21 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
               {!clicked && (
                 <div>
                   <div className='loadingLogo'>
+                    {!loading && (
+                      <motion.div
+                        className='gradient'
+                        transition={{ ease: "easeOut", duration: 0.4 }}
+                        initial={{ opacity: 0 }}
+                        animate={{
+                          opacity: 1,
+                        }}
+                        exit={{ opacity: 0 }}></motion.div>
+                    )}
                     <motion.img
                       src='./1half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3.5 }}
                       initial={{ top: "-10%", left: "-10%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -62,7 +89,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./2half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3.5 }}
                       initial={{ top: "-10%", left: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -76,7 +103,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./3half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3.5 }}
                       initial={{ left: "-10%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -90,7 +117,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./4half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3.5 }}
                       initial={{ left: "110%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -108,7 +135,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                   </div>
                 </div>
               )}
-            </div>
+            </motion.div>
           </motion.div>
         )}
         {/* <Footer

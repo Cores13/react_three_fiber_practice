@@ -171,6 +171,32 @@ body {
   outline: none;
   background: transparent;
   color: white;
+  /* color: #ffffff2a; */
+}
+
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 20%;
+  height: 30%;
+  /* background: radial-gradient(
+    #ffffff2a,
+    #ffffff1c,
+    #e5ff000c,
+    #000000,
+    #000000,
+    #000000
+  ); */
+  border-radius: 50%;
+  background: radial-gradient(#ffffff9f, #ffffff1c, #ffffff1c);
+  box-shadow: 0 0 60px 30px #ffffff1c,
+    inset 0 0 100px 60px rgba(255, 0, 255, 0.11),
+    0 0 100px 60px rgba(255, 0, 255, 0.11),
+    0 0 140px 90px rgba(0, 255, 255, 0.15),
+    0 0 1640px 190px rgba(0, 255, 255, 0.05),
+    inset 0 0 140px 90px rgba(0, 255, 255, 0.15);
 }
 @media (max-width: 424px) {
   .logoPiece {
