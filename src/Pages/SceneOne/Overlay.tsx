@@ -13,12 +13,12 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3700);
+    }, 3100);
     setTimeout(() => {
       setClicked(true);
       setReady(true);
       setSite("nav");
-    }, 4300);
+    }, 3700);
   }, []);
 
   // useEffect(() => {
@@ -81,7 +81,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./1half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3 }}
+                      transition={{ ease: "easeInOut", duration: 2.5 }}
                       initial={{ top: "-10%", left: "-10%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -95,7 +95,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./2half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3 }}
+                      transition={{ ease: "easeInOut", duration: 2.5 }}
                       initial={{ top: "-10%", left: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -109,7 +109,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./3half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3 }}
+                      transition={{ ease: "easeInOut", duration: 2.5 }}
                       initial={{ left: "-10%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -123,7 +123,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./4half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3 }}
+                      transition={{ ease: "easeInOut", duration: 2.5 }}
                       initial={{ left: "110%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",

@@ -14,16 +14,23 @@ export default function Overlay() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4500);
+    }, 3000);
+    setTimeout(() => {
+      setClicked(true);
+      // setReady(true);
+      setFirstOpen(false);
+      window.location.href = "/home";
+      // setSite("nav");
+    }, 3700);
   }, []);
 
-  const handleClick = () => {
-    setClicked(true);
-    setFirstOpen(false);
-    setTimeout(() => {
-      window.location.href = "/home";
-    }, 1000);
-  };
+  // const handleClick = () => {
+  //   setClicked(true);
+  //   setFirstOpen(false);
+  //   setTimeout(() => {
+  //     window.location.href = "/home";
+  //   }, 1000);
+  // };
 
   return (
     <>
@@ -36,15 +43,16 @@ export default function Overlay() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
             <div
-              onClick={() => {
-                handleClick();
-              }}>
+            // onClick={() => {
+            //   handleClick();
+            // }}
+            >
               {!clicked && (
                 <div>
                   {!loading && (
                     <motion.div
                       className='gradient'
-                      transition={{ ease: "easeOut", duration: 0.4 }}
+                      transition={{ ease: "easeOut", duration: 0.2 }}
                       initial={{ opacity: 0 }}
                       animate={{
                         opacity: 1,
@@ -56,7 +64,7 @@ export default function Overlay() {
                       src='./1half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ top: "-10%", left: "-10%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -70,7 +78,7 @@ export default function Overlay() {
                       src='./2half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ top: "-10%", left: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -84,7 +92,7 @@ export default function Overlay() {
                       src='./3half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ left: "-10%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -98,7 +106,7 @@ export default function Overlay() {
                       src='./4half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ duration: 3.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ left: "110%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -108,9 +116,9 @@ export default function Overlay() {
                       }}
                       exit={{ left: "110%", top: "110%", opacity: 0 }}
                     />
-                    {!loading && (
+                    {/* {!loading && (
                       <button className='loadingBtn'>Click to continue</button>
-                    )}
+                    )} */}
                   </div>
                 </div>
               )}
