@@ -89,14 +89,9 @@ function Intro({ start, set }: any) {
   });
 }
 
-export default function SceneOne({
-  ready,
-  setReady,
-  clicked,
-  setClicked,
-}: any) {
-  // const [clicked, setClicked] = useState(false);
-  // const [ready, setReady] = useState(false);
+export default function SceneOne() {
+  const [clicked, setClicked] = useState(false);
+  const [ready, setReady] = useState(false);
   const store = { clicked, setClicked, ready, setReady };
   return (
     <>
@@ -125,7 +120,7 @@ export default function SceneOne({
           <Intro start={ready && clicked} set={setReady} />
         </Suspense>
       </Canvas>
-      {/* <Overlay {...store} /> */}
+      <Overlay {...store} />
     </>
   );
 }

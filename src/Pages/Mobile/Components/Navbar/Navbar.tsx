@@ -8,13 +8,13 @@ export const Navbar = (props: Props) => {
   return (
     <nav className='MOBILEnavbar'>
       <div className='MOBILEnavbarLogoDiv'>
-        <a href='/' className='MOBILEnavbarLogoLink'>
+        <a href='/home' className='MOBILEnavbarLogoLink'>
           <img src='./VoxMagna.svg' alt='Logo' className='MOBILEnavbarLogo' />
           <h1 className='MOBILEnavbarTitle'>VOX MAGNA</h1>
         </a>
       </div>
       <div className='MOBILEnavbarNav'>
-        <a href='/' className='MOBILEnavbarLink'>
+        <a href='/home' className='MOBILEnavbarLink'>
           Home
         </a>
         <a href='/services' className='MOBILEnavbarLink'>

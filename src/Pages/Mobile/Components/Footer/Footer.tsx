@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className='MOBILEfooter'>
       <div className='MOBILEfooterLogoDiv'>
-        <a href='/' className='MOBILEfooterLogoLink'>
+        <a href='/home' className='MOBILEfooterLogoLink'>
           <img src='./VoxMagna.svg' alt='Logo' className='MOBILEnavbarLogo' />
           <h1 className='MOBILEnavbarTitle'>VOX MAGNA</h1>
         </a>
@@ -15,7 +15,7 @@ export const Footer = () => {
         <h2 className='MOBILEfooterMenuTitle'>Menu</h2>
         <ul>
           <li>
-            <a href='/' className='MOBILEfooterLink'>
+            <a href='/home' className='MOBILEfooterLink'>
               Home
             </a>
           </li>

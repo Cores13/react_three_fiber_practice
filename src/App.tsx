@@ -7,22 +7,16 @@ import { HomeMobile } from "./Pages/Mobile/HomeMobile/HomeMobile";
 import { ContactMobile } from "./Pages/Mobile/ContactMobile/ContactMobile";
 import { ServicesMobile } from "./Pages/Mobile/ServicesMobile/ServicesMobile";
 import { AboutMobile } from "./Pages/Mobile/AboutMobile/AboutMobile";
-import Overlay from "./Pages/SceneOne/Overlay";
+import MobileOverlay from "./Pages/SceneOne/MobileOverlay";
 import "./Pages/SceneOne/SceneOne.css";
 
 function App() {
-  const [clicked, setClicked] = useState(false);
-  const [ready, setReady] = useState(false);
-  const store = { clicked, setClicked, ready, setReady };
   const isMobile = window.innerWidth <= 700;
+
   const baseUrl: any = document
     .getElementsByTagName("base")[0]
     .getAttribute("href");
   // const baseUrl = "https://voxmagna.co";
-
-  useEffect(() => {
-    setTimeout(() => setReady(true), 500);
-  }, [setReady]);
 
   return (
     <Router basename={baseUrl}>
@@ -30,7 +24,9 @@ function App() {
         <Switch>
           {isMobile ? (
             <>
-              <Route exact path='/' component={HomeMobile} />
+              {/* {isMobile && <MobileOverlay />} */}
+              <Route exact path='/' component={MobileOverlay} />
+              <Route path='/home' component={HomeMobile} />
               <Route path='/contact' component={ContactMobile} />
               <Route path='/services' component={ServicesMobile} />
               <Route path='/about' component={AboutMobile} />
@@ -39,9 +35,8 @@ function App() {
             <Route exact path='/' component={Nav} />
           )}
         </Switch>
-        {isMobile ? null : <SceneOne {...store} />}
+        {isMobile ? null : <SceneOne />}
       </div>
-      <Overlay {...store} />
     </Router>
   );
 }
