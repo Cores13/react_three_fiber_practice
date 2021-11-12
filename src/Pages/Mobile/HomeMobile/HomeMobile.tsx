@@ -252,8 +252,8 @@ export const HomeMobile = (props: Props) => {
             />
           </a>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 };
