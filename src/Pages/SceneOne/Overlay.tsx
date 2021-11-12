@@ -13,7 +13,12 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 3700);
+    setTimeout(() => {
+      setClicked(true);
+      setReady(true);
+      setSite("nav");
+    }, 4300);
   }, []);
 
   // useEffect(() => {
@@ -40,31 +45,32 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
             }}
             exit={{ opacity: 0 }}>
             <motion.div
-              // className={`${
-              //   loading
-              //     ? "loadingBg"
-              //     : "loadingGradient"
-              // }`}
-              // style={{
-              //   background: `${
-              //     loading
-              //       ? "transparent"
-              //       : "radial-gradient(#ffffff2a,#ffffff1c, #e5ff000c, #000000, #000000, #000000)"
-              //   }`,
-              //   border: "none",
-              // }}
+            // className={`${
+            //   loading
+            //     ? "loadingBg"
+            //     : "loadingGradient"
+            // }`}
+            // style={{
+            //   background: `${
+            //     loading
+            //       ? "transparent"
+            //       : "radial-gradient(#ffffff2a,#ffffff1c, #e5ff000c, #000000, #000000, #000000)"
+            //   }`,
+            //   border: "none",
+            // }}
 
-              onClick={() => {
-                ready && setClicked(true);
-                setSite("nav");
-              }}>
+            // onClick={() => {
+            //   ready && setClicked(true);
+            //   setSite("nav");
+            // }}
+            >
               {!clicked && (
                 <div>
                   <div className='loadingLogo'>
                     {!loading && (
                       <motion.div
                         className='gradient'
-                        transition={{ ease: "easeOut", duration: 0.4 }}
+                        transition={{ ease: "easeOut", duration: 0.2 }}
                         initial={{ opacity: 0 }}
                         animate={{
                           opacity: 1,
@@ -75,7 +81,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./1half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3 }}
                       initial={{ top: "-10%", left: "-10%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -89,7 +95,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./2half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3 }}
                       initial={{ top: "-10%", left: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -103,7 +109,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./3half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3 }}
                       initial={{ left: "-10%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -117,7 +123,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./4half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 3.5 }}
+                      transition={{ ease: "easeInOut", duration: 3 }}
                       initial={{ left: "110%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -127,11 +133,11 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       }}
                       exit={{ left: "110%", top: "110%", opacity: 0 }}
                     />
-                    {!loading && (
+                    {/* {!loading && (
                       <button className='loadingBtn'>
                         {!ready ? "loading" : "click to continue"}
                       </button>
-                    )}
+                    )} */}
                   </div>
                 </div>
               )}
