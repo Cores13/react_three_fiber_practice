@@ -2,85 +2,69 @@ import React, { useContext, useState, useEffect } from "react";
 import "./SceneOne.css";
 import { GlobalState } from "../../GlobalState";
 import { motion, AnimatePresence } from "framer-motion";
-import { radioClasses } from "@mui/material";
 
-export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
+export default function Overlay() {
   const store = useContext(GlobalState);
   // eslint-disable-next-line
   const [site, setSite] = store?.sites;
+  const [clicked, setClicked] = useState(false);
+  const [firstOpen, setFirstOpen] = store?.firstOpen;
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3100);
+    }, 3000);
     setTimeout(() => {
       setClicked(true);
-      setReady(true);
-      setSite("nav");
+      // setReady(true);
+      setFirstOpen(false);
+      window.location.href = "/home";
+      // setSite("nav");
     }, 3700);
   }, []);
 
-  // useEffect(() => {
-  //   setReady(true);
-  //   setTimeout(async () => {
-  //     await (ready && setClicked(true));
-  //     setClicked(true);
-  //     setSite("nav");
-  //   }, 4000);
-  // }, [ready, clicked, setClicked, setReady, setSite]);
+  // const handleClick = () => {
+  //   setClicked(true);
+  //   setFirstOpen(false);
+  //   setTimeout(() => {
+  //     window.location.href = "/home";
+  //   }, 1000);
+  // };
 
   return (
     <>
       <AnimatePresence>
-        {!clicked && (
+        {firstOpen && (
           <motion.div
-            className={`fullscreen bg ${ready ? "ready" : "notready"} ${
-              clicked && "clicked"
-            }`}
+            className={`fullscreen bg ${clicked && "clicked"}`}
             transition={{ duration: 1 }}
             initial={{ opacity: 1 }}
-            animate={{
-              opacity: 1,
-            }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}>
-            <motion.div
-              // className={`${
-              //   loading
-              //     ? "loadingBg"
-              //     : "loadingGradient"
-              // }`}
-              // style={{
-              //   background: `${
-              //     loading
-              //       ? "transparent"
-              //       : "radial-gradient(#ffffff2a,#ffffff1c, #e5ff000c, #000000, #000000, #000000)"
-              //   }`,
-              //   border: "none",
-              // }}
-
-              onClick={() => {
-                ready && setClicked(true);
-                setSite("nav");
-              }}>
+            <div
+            // onClick={() => {
+            //   handleClick();
+            // }}
+            >
               {!clicked && (
                 <div>
+                  {!loading && (
+                    <motion.div
+                      className='gradient'
+                      transition={{ ease: "easeOut", duration: 0.2 }}
+                      initial={{ opacity: 0 }}
+                      animate={{
+                        opacity: 1,
+                      }}
+                      exit={{ opacity: 0 }}></motion.div>
+                  )}
                   <div className='loadingLogo'>
-                    {!loading && (
-                      <motion.div
-                        className='gradient'
-                        transition={{ ease: "easeOut", duration: 0.2 }}
-                        initial={{ opacity: 0 }}
-                        animate={{
-                          opacity: 1,
-                        }}
-                        exit={{ opacity: 0 }}></motion.div>
-                    )}
                     <motion.img
                       src='./1half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 2.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ top: "-10%", left: "-10%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -94,7 +78,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./2half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 2.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ top: "-10%", left: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -108,7 +92,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./3half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 2.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ left: "-10%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -122,7 +106,7 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       src='./4half.png'
                       alt=''
                       className='logoPiece'
-                      transition={{ ease: "easeInOut", duration: 2.5 }}
+                      transition={{ duration: 2.5 }}
                       initial={{ left: "110%", top: "110%", opacity: 0 }}
                       animate={{
                         top: "50%",
@@ -133,14 +117,12 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
                       exit={{ left: "110%", top: "110%", opacity: 0 }}
                     />
                     {/* {!loading && (
-                      <button className='loadingBtn'>
-                        {!ready ? "loading" : "click to continue"}
-                      </button>
+                      <button className='loadingBtn'>Click to continue</button>
                     )} */}
                   </div>
                 </div>
               )}
-            </motion.div>
+            </div>
           </motion.div>
         )}
         {/* <Footer

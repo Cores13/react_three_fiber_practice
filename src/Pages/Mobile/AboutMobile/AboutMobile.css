@@ -1,0 +1,38 @@
+.MOBILEaboutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  color: black;
+}
+.MOBILEaboutTitle {
+  font-size: 2.5rem;
+  margin-left: 0;
+}
+.MOBILEaboutText {
+  font-size: 1.5rem;
+}
+.MOBILEaboutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 100%;
+  padding-bottom: 100px;
+  /* padding-top: 50px; */
+}
+.MOBILEaboutThumbnail {
+  width: 100%;
+  height: 30vh;
+  background: url("../../../images/6.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+@media (max-width: 768px) {
+  .MOBILEaboutText {
+    font-size: 1.3rem;
+  }
+}

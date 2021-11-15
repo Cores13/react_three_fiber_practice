@@ -1,0 +1,149 @@
+.MOBILEcontact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 75vh;
+  width: 100%;
+  overflow: hidden;
+  color: black;
+}
+.MOBILEcontactThumbnail {
+  width: 100%;
+  height: 30vh;
+  background: url("../../../images/3.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.MOBILEcontactContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  overflow: visible;
+}
+.MOBILEcontactTitle {
+  font-size: 2.5rem;
+  margin-left: 0;
+}
+.MOBILEcontactDesc {
+  font-size: 1.5rem;
+}
+.MOBILEcontactSocialTitle {
+  color: black;
+}
+.MOBILEcontactSocialLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.74);
+}
+.MOBILEcontactLinkSocial {
+  color: var(--main);
+}
+.MOBILEcontactRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.MOBILEcontactUsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  top: -200px;
+  right: 0;
+  width: 70%;
+  height: auto;
+  background: rgba(255, 255, 255, 1);
+  padding: 20px;
+  border-radius: 15px;
+  /* backdrop-filter: blur(5); */
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.75);
+}
+.MOBILEcontactUsForm > input,
+.MOBILEcontactUsForm > textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid grey;
+  font-family: sans-serif;
+  background: transparent;
+}
+.MOBILEcontactUsForm > label {
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.MOBILEcontactUsBtn {
+  padding: 10px;
+  border: 1.5px solid black;
+  font-weight: 600;
+  background-color: var(--main);
+  color: black;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+@media (max-width: 1440px) {
+  .MOBILEcontact {
+    padding-bottom: 55px;
+  }
+  .MOBILEcontactContent {
+    width: 75%;
+  }
+  .MOBILEcontactUsForm {
+    position: absolute;
+    top: -200px;
+    right: -30%;
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 1440px) {
+  .MOBILEcontactContent {
+    width: 95%;
+  }
+  .MOBILEcontactUsForm {
+    position: absolute;
+    top: -200px;
+    right: 10%;
+    width: 100%;
+    height: auto;
+  }
+  .MOBILEcontactDesc {
+    width: 85%;
+  }
+}
+@media (max-width: 768px) {
+  .MOBILEcontactDesc {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 425px) {
+  .MOBILEcontactContent {
+    flex-direction: column;
+    width: 90%;
+  }
+  .MOBILEcontactUsForm {
+    position: unset;
+    top: -200px;
+    right: 10%;
+    width: 90%;
+    height: auto;
+  }
+  .MOBILEcontactDesc {
+    width: 100%;
+  }
+}

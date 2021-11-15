@@ -19,10 +19,12 @@ export const GlobalState = createContext<ContextType | undefined | any>(
 export const DataProvider: React.FC = ({ children }) => {
   const [site, setSite] = useState("nav");
   const [load, setLoad] = useState(false);
+  const [firstOpen, setFirstOpen] = useState(true);
 
   var store = {
     sites: [site, setSite],
     load: [load, setLoad],
+    firstOpen: [firstOpen, setFirstOpen],
   };
 
   return <GlobalState.Provider value={store}>{children}</GlobalState.Provider>;

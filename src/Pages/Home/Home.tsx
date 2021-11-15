@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { GlobalState } from "../../GlobalState";
 import "./Home.css";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export const Home = () => {
   const store = useContext(GlobalState);
+  const [site, setSite] = store?.sites;
   const [load, setLoad] = store?.load;
 
   setTimeout(() => {
@@ -32,9 +33,16 @@ export const Home = () => {
                 LET OUR VOICE BE THE FRONTMAN OF YOUR BUSINESS! ANY QUESTIONS
                 BEFORE WE START ROCKING?
               </h1>
-              <a href='/contact' className='landingContactBtn'>
+              <button
+                onClick={() => {
+                  setLoad(false);
+                  setTimeout(() => {
+                    setSite("contact");
+                  }, 500);
+                }}
+                className='landingContactBtn'>
                 ASK A QUESTION
-              </a>
+              </button>
             </div>
           </div>
 
@@ -79,9 +87,16 @@ export const Home = () => {
                   Sign up for the highest quality and performance marketing.
                   Cooperate with our team for the best results.
                 </p>
-                <a href='/contact' className='planBtn'>
+                <button
+                  onClick={() => {
+                    setLoad(false);
+                    setTimeout(() => {
+                      setSite("contact");
+                    }, 500);
+                  }}
+                  className='planBtn'>
                   GET PREMIUM
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -157,9 +172,16 @@ export const Home = () => {
                     Content Writing
                   </li>
                 </ul>
-                <a href='/contact' className='stepBtn'>
+                <button
+                  onClick={() => {
+                    setLoad(false);
+                    setTimeout(() => {
+                      setSite("contact");
+                    }, 500);
+                  }}
+                  className='stepBtn'>
                   Find out more
-                </a>
+                </button>
               </div>
             </div>
             <hr className='divider' />
@@ -198,19 +220,26 @@ export const Home = () => {
                       <span style={{ color: "aqua", fontSize: "2rem" }}>
                         •{" "}
                       </span>{" "}
-                      Twitter and youtube influencers comments on topics of
+                      Twitter and YouTube influencers comments on topics of
                       “what token to invest in”
                     </li>
                     <li>
                       <span style={{ color: "aqua", fontSize: "2rem" }}>
                         •{" "}
                       </span>
-                      List of twitter influencers and work with them
+                      List of Twitter influencers and work with them
                     </li>
                   </ul>
-                  <a href='/contact' className='stepBtn'>
+                  <button
+                    onClick={() => {
+                      setLoad(false);
+                      setTimeout(() => {
+                        setSite("contact");
+                      }, 500);
+                    }}
+                    className='stepBtn'>
                     Find out more
-                  </a>
+                  </button>
                 </div>
                 <div className='stepRight'>
                   <h1 className='stepNumber two'>02</h1>
@@ -233,23 +262,40 @@ export const Home = () => {
                 <ul>
                   <li>
                     <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>
-                    Full marketing control and planning (banner ads: coinzilla,
-                    twitter, fb, insta, google ?)
+                    Full marketing control and planning (banner ads: Coinzilla,
+                    Twitter, Facebook, Instagram, Google)
                   </li>
                   <li>
                     <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>
                     PR control
                   </li>
-                  {/* <li>
-                  <span style={{ color: "aqua", fontSize: "2rem" }}>• </span>
-                  Guerrilla Marketing
-                </li> */}
                 </ul>
-                <a href='/contact' className='stepBtn'>
+                <button
+                  onClick={() => {
+                    setLoad(false);
+                    setTimeout(() => {
+                      setSite("contact");
+                    }, 500);
+                  }}
+                  className='stepBtn'>
                   Find out more
-                </a>
+                </button>
               </div>
             </div>
+          </div>
+          <div className='testimonial'>
+            <h1 className='testimonialTitle'>TESTIMONIAL</h1>
+            <a
+              className='testimonialContent'
+              href='https://ideaology.io'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <img
+                src='./ideaologyLogo.svg'
+                alt='Ideaology Logo'
+                className='ideaologyLogo'
+              />
+            </a>
           </div>
         </motion.div>
       )}
