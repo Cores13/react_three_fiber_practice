@@ -45,25 +45,24 @@ export default function Overlay({ ready, setReady, clicked, setClicked }: any) {
             }}
             exit={{ opacity: 0 }}>
             <motion.div
-            // className={`${
-            //   loading
-            //     ? "loadingBg"
-            //     : "loadingGradient"
-            // }`}
-            // style={{
-            //   background: `${
-            //     loading
-            //       ? "transparent"
-            //       : "radial-gradient(#ffffff2a,#ffffff1c, #e5ff000c, #000000, #000000, #000000)"
-            //   }`,
-            //   border: "none",
-            // }}
+              // className={`${
+              //   loading
+              //     ? "loadingBg"
+              //     : "loadingGradient"
+              // }`}
+              // style={{
+              //   background: `${
+              //     loading
+              //       ? "transparent"
+              //       : "radial-gradient(#ffffff2a,#ffffff1c, #e5ff000c, #000000, #000000, #000000)"
+              //   }`,
+              //   border: "none",
+              // }}
 
-            // onClick={() => {
-            //   ready && setClicked(true);
-            //   setSite("nav");
-            // }}
-            >
+              onClick={() => {
+                ready && setClicked(true);
+                setSite("nav");
+              }}>
               {!clicked && (
                 <div>
                   <div className='loadingLogo'>
